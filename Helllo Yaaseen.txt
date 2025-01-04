@@ -1,0 +1,9 @@
+The base code for the django is mostly done ig. The rest will be completed as we make the pages.
+So it will be easier to test
+
+So this is how I imagine the workflow to be.
+in the main folder, there shall be a subfolder for the HTML pages, CSS and images vakin.
+You and I will be designing and making the pages in these folders. And then I will copy the pages to the django app for testing and such.
+This way we can use live server for development and don't have to worry about weird file naming.
+
+I will be working on the news page next. I want to get the database structure of that down.

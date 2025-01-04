@@ -1,0 +1,8 @@
+removed some dependencies that should be downloaded for postgres. checking if the new version requires them.
+if things fail to start, remeber to add back that line. (lol i had to include it, didn't work without it)
+
+For most things, I used the latest version of them. However, I was not able to use psycopg3. It didn't work.s
+
+Now, i need to create a model to test the function of the postgres database.
+i've created a "home" app and will add a "test" model to check the database
+in the future, the "home" app will route to views such as the home app and other sites such as about, contact us etc.
