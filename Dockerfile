@@ -19,7 +19,11 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev &&\
     /py/bin/pip install -r /requirements.txt  &&\
     apk del .tmp-deps &&\
-    adduser --disabled-password --no-create-home jsweb  
+    adduser --disabled-password --no-create-home jsweb &&\
+    mkdir -p /vol/web/static &&\
+    mkdir -p /vol/web/media &&\
+    chown -R jsweb:jsweb /vol &&\
+    chmod -R 755 /vol
 
 ENV PATH="/py/bin:$PATH"
 
