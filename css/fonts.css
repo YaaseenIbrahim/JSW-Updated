@@ -1,1 +1,40 @@
 /* Importing Fonts */
+/* English */
+@font-face {
+    font-family: outfit;
+    src: url(fonts/outfit/Outfit-Regular.ttf);
+}
+@font-face {
+    font-family: outfit bold;
+    src: url(fonts/outfit/Outfit-Bold.ttf);
+}
+@font-face {
+    font-family: outfit light;
+    src: url(/fonts/outfit/Outfit-Light.ttf);
+}
+
+/* Dhivehi */
+@font-face {
+    font-family:faruma;
+    src: url(/fonts/faruma.otf);
+}
+@font-face {
+    font-family: aanmufk;
+    src: url(/fonts/aammufk.ttf);
+}
+@font-face {
+    font-family: mvtypewriter;
+    src: url(/fonts/mvtypewriter/MVTypewriter_reg.ttf);
+}
+@font-face {
+    font-family: mvtypewriter bold;
+    src: url(/fonts/mvtypewriter/MVTypewriter_bol.ttf);
+}
+@font-face {
+    font-family: mvwaheed;
+    src: url(/fonts/mvwaheed.otf);
+}
+@font-face {
+    font-family: mvmaground bold;
+    src: url(/fonts/Mv_MAG_Round_Bold.otf);
+}
