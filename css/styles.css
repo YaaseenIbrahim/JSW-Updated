@@ -1,9 +1,343 @@
 /* Global Styles */
 @import url(colors.css);
 
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     font-family: outfit, aanmufk;
+    font-size: var(--normal-font-size);
+}
+
+a,
+ul {
+    list-style: none;
+}
+
+/* ============== REUSABLE CSS CLASSES ================ */
+.flex-parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-parent-col {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/*=============== GLOBAL VARIABLES ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+    --small-font-size: .75rem;
+}
+
+
+
+/*=============== NAVBAR ===============*/
+.navbar {
+    height: var(--header-height);
+    background-color: var(--backgroundcolor);
+    padding: 0 2rem;
+}
+
+.navbar__logocontainer {
+    /* margin-left: 4rem; */
+}
+
+
+.navbar__logo {
+    width: 11rem;
+}
+
+.navbar__linkscontainer {
+    transition: top .4s ease-in-out;
+
+}
+
+.navbar__link {
+    color: var(--red);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar__sociallinkscontainer {
+    /* margin-right: 4rem; */
+}
+
+.navbar__sociallinkslist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.navbar__sociallink {
+    transition: fill .3s;
+    fill: var(--red);
+}
+
+.navbar__sociallink.--viber {
+    --iconcolor: rebeccapurple;
+}
+
+.navbar__sociallink.--facebook {
+    --iconcolor: #3b5998;
+}
+
+.navbar__sociallink:hover {
+    fill: var(--iconcolor);
+}
+
+/* Mobile Navigation */
+.navbar__burgerbutton,
+.navbar__closebutton {
+    color: var(--red);
+}
+
+.navbar__sidebarbutton {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.navbar__burgerbutton,
+.navbar__closebutton {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.navbar__closebutton {
+    opacity: 0;
+}
+
+
+
+/* navbarigation for mobile devices */
+@media screen and (max-width: 1124px) {
+    .navbar {
+        height: 4rem;
+        align-items: center;
+    }
+
+    .navbar__logocontainer {
+        display: flex;
+        border: 1px solid black;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar__linkscontainer {
+        position: absolute;
+        background-color: var(--backgroundcolor);
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        opacity: 0;
+        height: calc(100% - 2.5rem);
+        pointer-events: none;
+        overflow: auto;
+    }
+
+
+    .navbar__linkscontainer::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .navbar__list {}
+
+    .navbar__link:hover {
+        background-color: var(--darkstripe);
+    }
+
+    .navbar__sociallinkscontainer {
+        display: none;
+
+    }
+
+
+
+}
+
+
+.show-menu {
+    opacity: 1;
+    top: 4.5rem;
+    pointer-events: all;
+}
+
+.show-icon .navbar__burgerbutton {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .navbar__closebutton {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+body:has(.show-menu) {
+    overflow-y: hidden;
+
+}
+
+/* Dropdown */
+.dropdown__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+}
+
+.dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform .4s;
+}
+
+
+.dropdown__link {
+    text-decoration: none;
+    color: var(--red);
+    background-color: white;
+    font-size: var(--smaller-font-size);
+    padding: 1rem 1.5rem;
+    display: block;
+
+}
+
+.dropdown__link:hover {
+    background-color: var(--stripe);
+}
+
+/* Rotate dropdown icon */
+.dropdown__holder:hover .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown__holder:hover .dropdown__list {
+    opacity: 1;
+    pointer-events: initial;
+    top: 3rem;
+    max-height: 1000px;
+    transition: top .3s ease-in-out, opacity .3s ease-in-out, max-height .7s ease-in-out;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .navbar__link {
+        padding-inline: 1rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1125px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .navbar {
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar__sidebarbutton {
+        display: none;
+    }
+
+    .navbar__list {
+        display: flex;
+        column-gap: 3rem;
+    }
+
+    .navbar__link {
+        height: 100%;
+        padding: 0;
+        justify-content: initial;
+        column-gap: .25rem;
+    }
+
+    .dropdown__holder {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropdown__list {
+        max-height: initial;
+        position: absolute;
+        align-items: center;
+        top: 3.5rem;
+        padding-top: 1.25rem;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .dropdown__link {
+        text-align: center;
+        min-width: 6rem;
+        padding: 1rem;
+    }
+
+    /* Navbar underlined effect */
+
+    .navbar__link:before,
+    .navbar__link:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--red);
+        transition: width ease-in-out 0.25s;
+    }
+
+    .navbar__link:before {
+        left: 50%;
+    }
+
+    .navbar__link:after {
+        right: 50%;
+    }
+
+    .navbar__link:hover:before,
+    .navbar__link:hover:after {
+        width: 50%;
+    }
 }
