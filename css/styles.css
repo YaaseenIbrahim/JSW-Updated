@@ -44,7 +44,7 @@ ul {
 
 /*=============== GLOBAL VARIABLES ===============*/
 :root {
-    --header-height: 3.5rem;
+    --header-height: 4rem;
 
     --normal-font-size: 1rem;
     --smaller-font-size: .875rem;
@@ -69,11 +69,9 @@ ul {
     width: 11rem;
 }
 
-.navbar__linkscontainer {
-    transition: top .4s ease-in-out;
-
+.navbar__linkscontainer{
+    transition: top .3s ease-in-out
 }
-
 .navbar__link {
     color: var(--red);
     padding: 1.25rem 1.5rem;
@@ -145,13 +143,11 @@ ul {
 /* navbarigation for mobile devices */
 @media screen and (max-width: 1124px) {
     .navbar {
-        height: 4rem;
-        align-items: center;
+        align-content: center;
     }
 
     .navbar__logocontainer {
         display: flex;
-        border: 1px solid black;
         justify-content: space-between;
         align-items: center;
     }
@@ -166,14 +162,13 @@ ul {
         height: calc(100% - 2.5rem);
         pointer-events: none;
         overflow: auto;
+     
     }
 
 
     .navbar__linkscontainer::-webkit-scrollbar {
         width: 0;
     }
-
-    .navbar__list {}
 
     .navbar__link:hover {
         background-color: var(--darkstripe);
@@ -191,8 +186,12 @@ ul {
 
 .show-menu {
     opacity: 1;
-    top: 4.5rem;
     pointer-events: all;
+        top: 4rem;
+}
+/* Gets rid of body scroll */
+body:has(.show-menu) {
+    overflow-y: hidden;
 }
 
 .show-icon .navbar__burgerbutton {
@@ -205,10 +204,7 @@ ul {
     transform: rotate(90deg);
 }
 
-body:has(.show-menu) {
-    overflow-y: hidden;
 
-}
 
 /* Dropdown */
 .dropdown__list {
@@ -270,7 +266,7 @@ body:has(.show-menu) {
     }
 
     .navbar {
-        height: calc(var(--header-height) + 2rem);
+        height: calc(var(--header-height) + 1.5rem);
         display: flex;
         justify-content: space-between;
         align-items: center;
