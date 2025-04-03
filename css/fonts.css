@@ -2,14 +2,22 @@
 /* English */
 @font-face {
     font-family: outfit;
-    src: url(fonts/outfit/Outfit-Regular.ttf);
+    src: url(/fonts/outfit/Outfit-Regular.ttf);
 }
 @font-face {
-    font-family: outfit bold;
-    src: url(fonts/outfit/Outfit-Bold.ttf);
+    font-family: outfit-bold;
+    src: url(/fonts/outfit/Outfit-Bold.ttf);
 }
 @font-face {
-    font-family: outfit light;
+    font-family: outfit-semi-bold;
+    src: url(/fonts/outfit/Outfit-SemiBold.ttf);
+}
+@font-face {
+    font-family: outfit-medium;
+    src: url(/fonts/outfit/Outfit-Medium.ttf);
+}
+@font-face {
+    font-family: outfit-light;
     src: url(/fonts/outfit/Outfit-Light.ttf);
 }
 
@@ -27,7 +35,7 @@
     src: url(/fonts/mvtypewriter/MVTypewriter_reg.ttf);
 }
 @font-face {
-    font-family: mvtypewriter bold;
+    font-family: mvtypewriter-bold;
     src: url(/fonts/mvtypewriter/MVTypewriter_bol.ttf);
 }
 @font-face {

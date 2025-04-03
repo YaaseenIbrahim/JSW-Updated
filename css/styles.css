@@ -9,7 +9,10 @@
     font-size: var(--normal-font-size);
 }
 
-a,
+a {
+    text-decoration: none;
+}
+
 ul {
     list-style: none;
 }
@@ -42,6 +45,22 @@ ul {
     margin-inline: 1.5rem;
 }
 
+.desktop-image {
+    border-radius: 20px;
+}
+
+.global-container {
+    max-width: 1200px;
+    margin-inline: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-size);
+    justify-self: center;
+}
+.--heading {
+    font-family: outfit-bold;
+}
+
 /*=============== GLOBAL VARIABLES ===============*/
 :root {
     --header-height: 4rem;
@@ -60,18 +79,14 @@ ul {
     padding: 0 2rem;
 }
 
-.navbar__logocontainer {
-    /* margin-left: 4rem; */
-}
-
-
 .navbar__logo {
     width: 11rem;
 }
 
-.navbar__linkscontainer{
+.navbar__linkscontainer {
     transition: top .3s ease-in-out
 }
+
 .navbar__link {
     color: var(--red);
     padding: 1.25rem 1.5rem;
@@ -82,9 +97,6 @@ ul {
     position: relative;
 }
 
-.navbar__sociallinkscontainer {
-    /* margin-right: 4rem; */
-}
 
 .navbar__sociallinkslist {
     display: flex;
@@ -162,7 +174,7 @@ ul {
         height: calc(100% - 2.5rem);
         pointer-events: none;
         overflow: auto;
-     
+
     }
 
 
@@ -187,8 +199,9 @@ ul {
 .show-menu {
     opacity: 1;
     pointer-events: all;
-        top: 4rem;
+    top: 4rem;
 }
+
 /* Gets rid of body scroll */
 body:has(.show-menu) {
     overflow-y: hidden;

@@ -1,0 +1,73 @@
+/* CSS for homepage page only */
+
+:root {
+    --gap-size: 3rem 0;
+}
+
+
+.homepage__landing-section {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180.05deg, rgba(176, 29, 38, 0.36) 2.08%, rgba(176, 29, 38, 0.36) 2.09%, rgba(255, 0, 15, 0.36) 11.86%, rgba(236, 151, 156, 0.36) 48.08%, rgba(247, 211, 213, 0.400122) 81.36%, rgba(255, 255, 255, 0.43) 99.95%), url('/_images/homepage-images/JAL_9153.jpg');
+    height: calc(100vh - var(--header-height));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+
+}
+
+.homepage__promotion-section {
+    background-color: var(--stripe);
+    padding: var(--gap-size);
+}
+
+.promotion__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+
+}
+
+.promotion__image {
+    width: 55rem;
+    object-fit: cover;
+    height: 22rem;
+}
+
+.promotion__textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.75rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.promotion__text.--heading {
+    font-size: 45px;
+}
+
+.promotion__text.--description {
+    font-size: 1rem;
+    font-family: outfit-light;
+}
+
+.homepage__button {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--buttonred);
+    font-family: outfit-medium;
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+/*! NTS: PC only effect */
+.homepage__button:hover {
+    transform: translateY(-4px);
+    box-shadow: none;
+}
