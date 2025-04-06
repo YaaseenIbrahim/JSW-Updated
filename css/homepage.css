@@ -19,6 +19,7 @@
 .homepage__promotion-section {
     background-color: var(--stripe);
     padding: var(--gap-size);
+    gap: var(--gap-size);
 }
 
 .promotion__row {
@@ -31,7 +32,7 @@
 }
 
 .promotion__image {
-    width: 55rem;
+    width: 40rem;
     object-fit: cover;
     height: 22rem;
 }
@@ -70,4 +71,8 @@
 .homepage__button:hover {
     transform: translateY(-4px);
     box-shadow: none;
+}
+
+.homepage__heading{
+    font-size: 42px;
 }
