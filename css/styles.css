@@ -1,6 +1,17 @@
 /* Global Styles */
 @import url(colors.css);
 
+/*=============== GLOBAL VARIABLES ===============*/
+:root {
+    --header-height: 4rem;
+
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+    --small-font-size: .75rem;
+
+    --border-radius: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +19,9 @@
     font-family: outfit, aanmufk;
     font-size: var(--normal-font-size);
 }
-
+body{
+    background-color: var(--backgroundcolor);
+}
 a {
     text-decoration: none;
 }
@@ -31,11 +44,11 @@ ul {
     flex-direction: column;
 }
 
-.-center {
+.--center {
     justify-content: center;
     align-items: center;
 }
-.-space-between {
+.--space-between {
     justify-content: space-between;
 }
 
@@ -62,6 +75,7 @@ ul {
 
 .--heading {
     font-family: outfit-bold;
+    text-transform: capitalize;
 }
 
 .content-grid {
@@ -97,17 +111,6 @@ img.full-width {
     max-height: 45vh;
     object-fit: cover;
 }
-
-/*=============== GLOBAL VARIABLES ===============*/
-:root {
-    --header-height: 4rem;
-
-    --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-    --small-font-size: .75rem;
-}
-
-
 
 /*=============== NAVBAR ===============*/
 .navbar {
