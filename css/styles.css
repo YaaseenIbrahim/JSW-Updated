@@ -42,10 +42,11 @@ ul {
     margin-inline: 1.5rem;
 }
 
+
 /*=============== GLOBAL VARIABLES ===============*/
 :root {
     --header-height: 4rem;
-
+    --large-font-size: 2rem;
     --normal-font-size: 1rem;
     --smaller-font-size: .875rem;
     --small-font-size: .75rem;

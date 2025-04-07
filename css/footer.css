@@ -1,36 +1,18 @@
 /* Global Styles */
 @import url(colors.css);
 
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: outfit, aanmufk;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
+/*=============== FOOTER ===============*/
 
 .footer {
-    margin-top: auto;
-    max-height: 500px;
     padding: 3rem;
     background-color: var(--backgroundcolor);
 }
 
 .footer__container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 87.5rem;
+    justify-content: space-between;
+    max-width: 80rem;
+    height: 100%;
     margin: 0 auto;
     background-color: var(--backgroundcolor);
 }
@@ -38,6 +20,56 @@ img {
 .footer__column {
     display: flex;
     flex-direction: column;
+    align-content: center;
+}
+
+.footer__email {
+    color: var(--red);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer__column--info {
+    order: 1;
+}
+
+.footer__column--logo {
+    order: 2;
+}
+
+.footer__column--links {
+    order: 3;
+}
+
+.footer__column--links h4 {
+    letter-spacing: 35%;
+    font-size: var(--large-font-size);
+}
+
+.footer__column--links ul{
+    list-style-type: disc;
+    color: var(--red);
+}
+
+.footer__column--links ul:first-child{
+    margin-right: .5rem;
+}
+
+.footer__column--links li {
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+}
+
+
+.footer__infocontainer {
+    display: flex;  
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.footer__infocontainer span {
+    margin-left: 1rem;
 }
 
 .footer__icon {
@@ -46,15 +78,43 @@ img {
 }
 
 .footer__logo {
-    width: 10rem;
+    width: 17.5rem;
     height: auto;
+    margin: 0 auto;
+}
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--mutedtext);
+    font-size: var(--small-font-size);
+}
+
+.footer__links {
+    text-align: center;
 }
 
 
-@media screen and (max-width: 1400px) {}
+@media screen and (max-width: 1124px) { 
+    .footer__container {
+        flex-direction: column;
+        max-width: 26rem;
+    }
 
-@media screen and (max-width: 1024px) {}
+     .footer__column--links h4 {
+        letter-spacing: 14%;
+    }
 
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 420px) {}
+    .footer__column--info {
+        order: 1;
+    }
+    
+    .footer__column--logo {
+        order: 3;
+        padding-right: 2rem;
+    }
+    
+    .footer__column--links {
+        order: 2;
+    }
+}
