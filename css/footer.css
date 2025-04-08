@@ -1,11 +1,9 @@
-/* Global Styles */
-@import url(colors.css);
-
 /*=============== FOOTER ===============*/
 
 .footer {
     padding: 3rem;
     background-color: var(--backgroundcolor);
+    text-transform: capitalize;
 }
 
 .footer__container {
@@ -20,17 +18,20 @@
 .footer__column {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-content: center;
 }
 
 .footer__email {
     color: var(--red);
     text-decoration: underline;
+    text-transform: lowercase;
     cursor: pointer;
 }
 
 .footer__column--info {
     order: 1;
+    gap: 2.5rem;
 }
 
 .footer__column--logo {
@@ -39,19 +40,22 @@
 
 .footer__column--links {
     order: 3;
+    display: flex;
+    gap: 1rem;
 }
 
 .footer__column--links h4 {
     letter-spacing: 35%;
     font-size: var(--large-font-size);
+    font-family: outfit bold;
 }
 
-.footer__column--links ul{
+.footer__column--links ul {
     list-style-type: disc;
     color: var(--red);
 }
 
-.footer__column--links ul:first-child{
+.footer__column--links ul:first-child {
     margin-right: .5rem;
 }
 
@@ -62,16 +66,11 @@
 
 
 .footer__infocontainer {
-    display: flex;  
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 2.5rem;
+    gap: 1rem;
+    justify-content: left;
 }
-
-.footer__infocontainer span {
-    margin-left: 1rem;
-}
-
 .footer__icon {
     width: 3rem;
     height: auto;
@@ -95,25 +94,26 @@
 }
 
 
-@media screen and (max-width: 1124px) { 
+@media screen and (max-width: 1124px) {
     .footer__container {
         flex-direction: column;
         max-width: 26rem;
+        gap: 3rem;
     }
 
-     .footer__column--links h4 {
+    .footer__column--links h4 {
         letter-spacing: 14%;
     }
 
     .footer__column--info {
         order: 1;
     }
-    
+
     .footer__column--logo {
         order: 3;
         padding-right: 2rem;
     }
-    
+
     .footer__column--links {
         order: 2;
     }
