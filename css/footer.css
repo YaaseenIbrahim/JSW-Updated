@@ -46,6 +46,7 @@
 
 .footer__column--links h4 {
     letter-spacing: 35%;
+    text-align: center;
     font-size: var(--large-font-size);
     font-family: outfit bold;
 }
@@ -62,6 +63,10 @@
 .footer__column--links li {
     margin-bottom: 1.25rem;
     cursor: pointer;
+}
+
+.footer__column--links li a{
+    color: inherit;
 }
 
 
@@ -101,12 +106,9 @@
         gap: 3rem;
     }
 
-    .footer__column--links h4 {
-        letter-spacing: 14%;
-    }
-
     .footer__column--info {
         order: 1;
+        padding-left: 2.5rem;
     }
 
     .footer__column--logo {
@@ -116,5 +118,17 @@
 
     .footer__column--links {
         order: 2;
+    }
+}
+
+@media screen and (max-width: 460px) { 
+    .footer {
+        padding: 3rem 1rem;
+    }
+
+    .footer__column--links h4 {
+        letter-spacing: 12%;
+        font-size: var(--large-font-size);
+        text-align: left;
     }
 }
