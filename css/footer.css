@@ -67,6 +67,31 @@
 
 .footer__column--links li a{
     color: inherit;
+    position: relative;
+}
+
+.footer__column--links li a:before,
+.footer__column--links li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--red);
+    transition: width ease-in-out 0.25s;
+}
+
+.footer__column--links li a:before {
+    left: 50%;
+}
+
+.footer__column--links li a:after {
+    right: 50%;
+}
+
+.footer__column--links li a:hover:before,
+.footer__column--links li a:hover:after {
+    width: 50%;
 }
 
 

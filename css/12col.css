@@ -1,0 +1,63 @@
+.container {
+  max-width: 75rem;
+  margin: 3rem auto;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.bigfunkyimage {
+  grid-column: span 6;
+  width: 100%;
+}
+
+.descriptivetext {
+  grid-column: span 6;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardtitle {
+  grid-column: span 12;
+  justify-self: center;
+  font-size: 3.4rem;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.card {
+  grid-column: span 3;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  height: 300px;
+  box-shadow: 6px 12px 14px 1px rgba(0, 0, 255, 0.1);
+  border-radius: 25px;
+  background-color: aliceblue;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    grid-column: span 4;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .card {
+    grid-column: span 6;
+  }
+
+  .bigfunkyimage {
+    grid-column: span 12;
+  }
+
+  .descriptivetext {
+    grid-column: span 12;
+  }
+}
