@@ -1,0 +1,168 @@
+/* CSS for homepage page only */
+
+:root {
+    --section-gap-size: 3rem 0;
+    --gap-size: 3rem 0;
+}
+
+
+.homepage__landing-section {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180.05deg, rgba(176, 29, 38, 0.36) 2.08%, rgba(176, 29, 38, 0.36) 2.09%, rgba(255, 0, 15, 0.36) 11.86%, rgba(236, 151, 156, 0.36) 48.08%, rgba(247, 211, 213, 0.400122) 81.36%, rgba(255, 255, 255, 0.43) 99.95%), url('/_images/homepage-images/JAL_9153.jpg');
+    height: calc(100vh - var(--header-height));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+
+}
+
+.homepage__promotion-section {
+    background-color: var(--stripe);
+    padding: var(--section-gap-size);
+    gap: var(--gap-size);
+}
+
+.promotion__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+
+}
+
+.promotion__image {
+    width: 40rem;
+    object-fit: cover;
+    height: 22rem;
+}
+
+.promotion__textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.75rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.promotion__text.--heading {
+    font-size: 45px;
+}
+
+.promotion__text.--description {
+    font-size: 1rem;
+    font-family: outfit-light;
+}
+
+.homepage__button {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--buttonred);
+    font-family: outfit-medium;
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    height: min-content;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+/*! NTS: PC only effect */
+.homepage__button:hover {
+    transform: translateY(-4px);
+    box-shadow: none;
+}
+
+
+/* ========== NEWS SECTION =========== */
+.homepage__news-section {
+    --gap-size: 1.5rem;
+    padding: var(--section-gap-size);
+    gap: var(--gap-size);
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-areas: 
+        'header header'
+        'eng dhi'
+        'eng dhi'
+        'eng dhi';
+    
+}
+.homepage__news-section .card__text.--date {
+    color: var(--red);
+}
+.homepage__news-section .homepage__button {
+    padding: 0.5rem 2rem;
+    justify-self: right;
+}
+.homepage__heading{
+    font-size: 42px;
+}
+.homepage__card{
+    background-color: white;
+    border-radius: var(--border-radius);
+    width: 100%;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.20);    
+    display: flex;
+    flex-direction: row;
+   
+}
+.homepage__card.--horizontal-card{
+    flex-direction: row;
+    gap: 1rem;
+}
+.card__image{
+    object-fit: cover;
+}
+.homepage__card.--horizontal-card .card__image {
+    width: 30%;
+    height: 100%;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+.homepage__card.--horizontal-card.--dhivehicard .card__image{
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+.card__textcontainer{
+    padding: 1rem 0;
+}
+.card__text{
+    font-family: outfit-semi-bold;   
+}
+.card__text.--title {
+    font-size: 1.4rem;
+}
+.card__text.--date{
+    font-size: var(--normal-font-size);
+}
+.homepage__card.--vertical-card{
+    grid-area: eng;
+    flex-direction: column;
+}
+.homepage__card.--vertical-card .card__image {
+    width: 100%;
+    height: 60%;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+.homepage__card.--vertical-card.--dhivehi-card{
+    grid-area: dhi;
+}
+.homepage__card.--vertical-card .card__textcontainer{
+    margin: 0 1rem;
+    /* display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem; */
+    
+}
+.homepage__card.--vertical-card .card__text.--title {
+    font-size: 1.8rem;
+}
+.homepage__card.--vertical-card .card__text.--date {
+    font-size: 1.2rem;
+}
+
+.homepage__card.--dhivehi-card .card__text{
+    direction: rtl;
+    font-family: aanmufk;
+}
