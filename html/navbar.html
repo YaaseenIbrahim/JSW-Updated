@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <header class="navbar">
         <div class="navbar__logocontainer">
             <a href="#" class="flex-parent">
                 <img class="navbar__logo" src="/_images/icons/banner-logo-darkred-text-centered .svg" alt="">
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="navbar__linkscontainer" id="navbar-linkscontainer">
+        <nav class="navbar__linkscontainer" id="navbar-linkscontainer">
             <ul class="navbar__list">
                 <li><a href="#" class="navbar__link">News</a></li>
 
@@ -68,7 +68,7 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </nav>
         <div class="navbar__sociallinkscontainer">
             <ul class="navbar__sociallinkslist" id="navbar-sociallinkslist">
                 <li>
@@ -91,7 +91,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </header>
     <script>
         const showMenu = (sidebarbuttonId, navbarId) => {
             const sidebarbutton = document.getElementById(sidebarbuttonId)
