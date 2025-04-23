@@ -22,10 +22,9 @@
     align-content: center;
 }
 
-.footer__email {
+.footer__infolink {
     color: var(--red);
     text-decoration: underline;
-    text-transform: lowercase;
     cursor: pointer;
 }
 
@@ -45,10 +44,10 @@
 }
 
 .footer__column--links h4 {
-    letter-spacing: 35%;
+    letter-spacing: 11.2px;
     text-align: center;
     font-size: var(--large-font-size);
-    font-family: outfit bold;
+    font-family: outfit-bold;
 }
 
 .footer__column--links ul {
@@ -152,8 +151,13 @@
     }
 
     .footer__column--links h4 {
-        letter-spacing: 12%;
+        letter-spacing: 4px;
         font-size: var(--large-font-size);
         text-align: left;
+    }
+
+    .footer__column--links {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
