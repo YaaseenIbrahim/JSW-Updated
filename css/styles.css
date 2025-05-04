@@ -19,9 +19,11 @@
     font-family: outfit, aanmufk;
     font-size: var(--normal-font-size);
 }
-body{
+
+body {
     background-color: var(--backgroundcolor);
 }
+
 a {
     text-decoration: none;
 }
@@ -48,10 +50,14 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
 .--space-between {
     justify-content: space-between;
 }
 
+.--dhivehi {
+    direction: rtl;
+}
 
 .noselect {
     -webkit-touch-callout: none;
@@ -66,14 +72,8 @@ ul {
     border-radius: 10px;
 }
 
-.global-container {
-    max-width: 1200px;
-    margin-inline: 1.5rem;
-    gap: var(--gap-size);
-    margin: auto;
-}
 .--heading {
-    font-family: outfit-bold;
+    font-family: Outfit-Bold;
     text-transform: capitalize;
 }
 
@@ -90,10 +90,58 @@ ul {
             var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
 }
 
+.breakline {
+    margin: 1.5rem 0;
+    height: 2px;
+    border-radius: 10px;
+    color: var(--darkgray);
+    background-color: var(--darkgray);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-title__header {
+    position: relative;
+    font-family: Outfit-bold;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.page-title__header::before {
+    position: relative;
+    display: inline-block;
+    content: "";
+    background-image: url("/_images/icons/black-sheild.svg");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    left: -30px;
+}
+
+.page-title__header::after {
+    position: relative;
+    display: inline-block;
+    content: "";
+    background-image: url("/_images/icons/black-sheild.svg");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    right: -30px;
+}
+
+.page-title__description {
+    font-size: var(--medium-font-size);
+}
+
 /*=============== GLOBAL VARIABLES ===============*/
 :root {
     --header-height: 4rem;
     --large-font-size: 2rem;
+    --medium-font-size: 1.5rem;
     --normal-font-size: 1rem;
     --smaller-font-size: .875rem;
     --small-font-size: .75rem;
