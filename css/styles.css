@@ -89,14 +89,14 @@ ul {
 
 .page-title {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .page-title__header {
     position: relative;
     font-family: Outfit-bold;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
-    margin-bottom: 20px;
 }
 
 .page-title__header::before {
@@ -123,6 +123,12 @@ ul {
 
 .page-title__description {
     font-size: var(--medium-font-size);
+    padding: 0 5rem 0 5rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: var(--normal-font-size);
+        padding: 0;
+    }
 }
 
 /*=============== GLOBAL VARIABLES ===============*/
