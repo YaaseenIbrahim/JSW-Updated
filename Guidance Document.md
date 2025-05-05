@@ -17,14 +17,27 @@ Especially considering certain words have different connotations to different us
 # 2. Definitions & Terms
     2.1. The following words are used to refer to their specific elements, if any classes are to be written on such an element, it should include those names (such as card__title if the element is deemed to be a title):
     
-        Heading: The large text above a specific section. 
+        Heading: The large text above a specific section. (Not to be confused with ``<header>``)
             Eg: 'Latest News' in homepage is a heading
 
         Title: "Suruhee" of a writing, News etc. Basically the name of the thing. Smaller than heading.
             Eg: 'Jalaluddin School announces new project' is a title of a news. Would be under a heading.
 
-        Section: Area which showcases Any conceivably different idea from the one above it. Largest nester.
+    2.2: We follow almost all semantic tag guidlines. The following are some common ones to keep in mind:
+
+        <section>: Area which showcases Any conceivably different idea from the one above it. Largest nester.
             Eg: 'Alumni Testimonials' in the homepage is the largest area showing the alumni part. When using CSS, this whole area will hence be reffered to as 'alumni-section'.
+
+        <header>: The top part of a website, including navigation links, logo, search etc... Semantic major top area.
+            Eg: Header of homepage includes the JS logo, all navigation links, social media links
+        
+        <nav>: A list of links used for navigation. Smaller than header. Essentially a child of header.
+            Eg: The links in the header of homepage are all considered 'navbar'
+
+        *Note: Although the above definition specifies otherwise, the header tag was consistently labeled with the '.navbar' class during the homepage development. This was due to our familiarity with the term at the time—not because it was technically correct. However, since we've grown comfortable with this convention, we have decided to keep this one exception as is*
+
+        <article>: Any standalone piece of content that could be reproduced elsewhere, or would make sense on its own, usually including generally article-like children inside like date, title, description
+            Eg: Cards are generally all article tags, unless they are just for presentational or design purposes, in which case it will be a div. A more obvious example would be a literal article.
 
 # 3. Text & Font sizes
     3.1. All font sizes are to be written in rem, unless it is considered difficult, such as in position absolute shapes or otherwise.
@@ -33,4 +46,5 @@ Especially considering certain words have different connotations to different us
 
     3.3. Below are the standard font sizes:
     Default text size: 1rem (16px)
+    Secondary/Caption level text size:
     To be determined
