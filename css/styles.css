@@ -1,17 +1,6 @@
 /* Global Styles */
 @import url(colors.css);
 
-/*=============== GLOBAL VARIABLES ===============*/
-:root {
-    --header-height: 4rem;
-
-    --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-    --small-font-size: .75rem;
-
-    --border-radius: 10px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -145,7 +134,7 @@ ul {
     --normal-font-size: 1rem;
     --smaller-font-size: .875rem;
     --small-font-size: .75rem;
-
+    --border-radius: 10px;
 }
 
 .content-grid> :not(.breakout, .full-width),
