@@ -83,23 +83,22 @@ ul {
     margin: 1.5rem 0;
     height: 2px;
     border-radius: 10px;
-    color: var(--darkgray);
     background-color: var(--darkgray);
 }
 
-.page-title {
+.page-title-section {
     text-align: center;
     margin-bottom: 10px;
 }
 
-.page-title__header {
+.page-title__heading {
     position: relative;
     font-family: Outfit-bold;
     font-size: 3rem;
     text-transform: uppercase;
 }
 
-.page-title__header::before {
+.page-title__heading::before {
     position: relative;
     display: inline-block;
     content: "";
@@ -110,7 +109,7 @@ ul {
     left: -30px;
 }
 
-.page-title__header::after {
+.page-title__heading::after {
     position: relative;
     display: inline-block;
     content: "";
