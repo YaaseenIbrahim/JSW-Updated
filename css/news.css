@@ -16,13 +16,15 @@
 }
 
 .card {
-  background-color: white;
+  background-color: white;  
   text-align: right;
   overflow: clip;
   justify-content: start;
-  gap: 0.8rem;
+  gap: 0.1rem;
   padding: 0 10px 20px 10px;
   transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  height: 100%;
 
   &:hover {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
@@ -72,8 +74,28 @@
 .card__title {
   font-size: var(--medium-font-size);
   word-spacing: 3px;
+  margin-top: 0.2rem;
 
   @media screen and (max-width: 768px) {
     font-size: var(--normal-font-size);
   }
+}
+
+.main-news {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+  "horizontal vertical"
+  "horizontal vertical"
+  "horizontal vertical"
+  ;
+}
+
+.vertical-card {
+  grid-area: vertical;
+}
+
+.horizontal-card {
+  grid-area: horizontal;
 }
