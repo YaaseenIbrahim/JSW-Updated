@@ -1,0 +1,106 @@
+/* CSS for homepage page only */
+
+:root {
+    --section-gap-size: 2rem 0;
+    --gap-size: 3rem 0;
+}
+
+* {
+    text-transform: capitalize;
+}
+
+.homepage__landing-section {
+    background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        linear-gradient(180.05deg,
+            rgba(176, 29, 38, 0.36) 2.08%,
+            rgba(176, 29, 38, 0.36) 2.09%,
+            rgba(255, 0, 15, 0.36) 11.86%,
+            rgba(236, 151, 156, 0.36) 48.08%,
+            rgba(247, 211, 213, 0.4) 81.36%,
+            rgba(255, 255, 255, 0.43) 99.95%),
+        url('/_images/homepage-images/JAL_9153.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - var(--header-height));
+    /* Google says dvh is the modern version for this now */
+}
+
+.homepage__promotion-section {
+    row-gap: 3rem;
+    background-color: var(--stripe);
+    padding: var(--section-gap-size);
+}
+
+.promotion__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.75rem;
+}
+
+.promotion__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 0.5rem;
+}
+
+.promotion__heading {
+
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-family: outfit-bold, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+
+}
+
+.promotion__description {
+    font-size: 18px;
+    font-family: outfit-light, sans-serif;
+}
+
+.promotion__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.homepage__button {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-family: outfit-medium, sans-serif;
+    color: white;
+    background-color: var(--buttonred);
+    border-radius: 999px;
+}
+
+@media (min-width: 780px) {
+    .promotion__row:nth-child(even) {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .promotion__row:nth-child(odd) {
+        flex-direction: row-reverse;
+        gap: 4rem;
+    }
+
+    .promotion__image {
+        width: minmax(100%, 40rem);
+        height: 22rem;
+    }
+
+    .promotion__text-container {
+        row-gap: 0.75rem;
+    }
+
+}

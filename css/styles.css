@@ -4,11 +4,10 @@
 /*=============== GLOBAL VARIABLES ===============*/
 :root {
     --header-height: 4rem;
-
+    --large-font-size: 2rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-    --small-font-size: .75rem;
-
+    --small-font-size: .875rem;
+    --smaller-font-size: .75rem;
     --border-radius: 10px;
 }
 
@@ -19,9 +18,11 @@
     font-family: outfit, aanmufk;
     font-size: var(--normal-font-size);
 }
-body{
+
+body {
     background-color: var(--backgroundcolor);
 }
+
 a {
     text-decoration: none;
 }
@@ -48,6 +49,7 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
 .--space-between {
     justify-content: space-between;
 }
@@ -72,6 +74,7 @@ ul {
     gap: var(--gap-size);
     margin: auto;
 }
+
 .--heading {
     font-family: outfit-bold;
     text-transform: capitalize;
@@ -91,14 +94,6 @@ ul {
 }
 
 /*=============== GLOBAL VARIABLES ===============*/
-:root {
-    --header-height: 4rem;
-    --large-font-size: 2rem;
-    --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-    --small-font-size: .75rem;
-
-}
 
 .content-grid> :not(.breakout, .full-width),
 .full-width> :not(.breakout, .full-width) {
@@ -308,7 +303,7 @@ body:has(.show-menu) {
     max-height: 1000px;
     transition: top .3s ease-in-out, opacity .3s ease-in-out, max-height .7s ease-in-out;
 }
-
+/* https: //www.youtube.com/watch?v=B_n4YONte5A&list=PL4-IK0AVhVjNcjfYDQEseNxuarDjSEdZK&index=1 to fix this  */
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
