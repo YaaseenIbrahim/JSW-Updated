@@ -21,57 +21,35 @@
         <!-- Promotion Section -->
         <section class="homepage__promotion-section full-width" id="homepage-promotion-section">
             <div class="promotion__row">
-                
-                <img class="promotion__image" src="/_images/homepage-images/365430852_765760188681736_6297625243684502299_n 1.png"
-                alt="Photo of students" loading="lazy" />
+
+                <img class="promotion__image"
+                    src="/_images/homepage-images/365430852_765760188681736_6297625243684502299_n 1.png"
+                    alt="Photo of students" loading="lazy" />
                 <div class="promotion__text-container">
                     <h2 class="promotion__heading">Disciplined and determined</h2>
                     <p class="promotion__description">
                         our school motto, embedded in every aspect of the school.
                     </p>
+                    <a href="#" class="homepage__button">View more</a>
                 </div>
-                
-                <a href="#" class="homepage__button">View more</a>
+
             </div>
             <div class="promotion__row">
-                <img class="promotion__image" src="/_images/homepage-images/trophies.png"
-                    alt="Photo of trophies" loading="lazy" />
+                <img class="promotion__image" src="/_images/homepage-images/trophies.png" alt="Photo of trophies"
+                    loading="lazy" />
                 <div class="promotion__text-container">
                     <h2 class="promotion__heading">Academically Distinguished</h2>
                     <p class="promotion__description">
                         Our students secure top 10 spots every year with inspirational achievements.
                     </p>
+                    <a href="#" class="homepage__button">View more</a>
                 </div>
-            
-            
-                <a href="#" class="homepage__button">View more</a>
+
+
             </div>
         </section>
     </main>
-    <script>
-        function moveButtonsForDesktop() {
-            if (window.innerWidth >= 992) {
-                document.querySelectorAll('.promotion__row').forEach(row => {
-                    const button = row.querySelector('.homepage__button');
-                    const textContainer = row.querySelector('.promotion__text-container');
-                    if (button && textContainer && !textContainer.contains(button)) {
-                        textContainer.appendChild(button);
-                    }
-                });
-            } else {
-                document.querySelectorAll('.promotion__row').forEach(row => {
-                    const button = row.querySelector('.homepage__button');
-                    const textContainer = row.querySelector('.promotion__text-container');
-                    if (button && textContainer && textContainer.contains(button)) {
-                        row.appendChild(button); // move it back out for mobile
-                    }
-                });
-            }
-        }
 
-        window.addEventListener('load', moveButtonsForDesktop);
-        window.addEventListener('resize', moveButtonsForDesktop);
-    </script>
 </body>
 
 </html>
