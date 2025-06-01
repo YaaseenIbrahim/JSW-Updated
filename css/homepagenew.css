@@ -63,7 +63,6 @@
 
 .promotion__description {
     font-size: clamp(16px, 2vw, 18px);
-    font-size: 18px;
     font-family: outfit-light, sans-serif;
 }
 
@@ -150,6 +149,11 @@
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: space-between;
+    grid-template-areas: 
+    'heading heading'
+        'eng dhi'
+        'eng dhi'
+        'eng dhi';
 }
 
 .news__heading-row-container {
@@ -159,6 +163,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .news__heading {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
     font-family: outfit-bold, sans-serif;
@@ -167,28 +172,30 @@
 
 /* sAME CODE AS NORMAL BUTTON, CAN UNIONIZE */
 
-.news__image {
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    width: 30%;
-    height: 6rem;
-    object-fit: cover;
-}
 
 
 .news__card {
-    gap: 0.5rem;
+    gap: 1.25rem;
     border-radius: var(--border-radius);
-    border: 1px solid black;
     grid-column: span 2;
     display: flex;
+    min-height: 8rem;
 
 }
-.news__card-dhivehi{
-    direction: rtl;
-    
+
+.news__image {
+    border-radius: var(--border-radius);
+    width: 40%;
+    height: auto;
+    object-fit: cover;
 }
+
 .news__text-container {
-    height: fit-content;
+    /* gap: 1rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .news__date {
@@ -198,6 +205,47 @@
 }
 
 .news__title {
-    font-family: outfit-semi-bold, aammufk ;
-    font-size: 1.2rem;
+    font-family: outfit-semi-bold, aammufk;
+    font-size: clamp(16px, 4vw, 1.2rem);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
 }
+
+.news__card-dhivehi {
+    direction: rtl;
+
+}
+
+/*! Change if no border for the cards */
+
+.news__card-dhivehi .news__text-container {
+    text-align: right;
+}
+
+/* Medium and Above */
+@media (min-width: 780px) {
+    .homepage__latest-news-section {
+            row-gap: 1rem;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-areas:
+                'heading heading'
+                'eng dhi'
+                'eng dhi'
+                'eng dhi';   }
+    .news__card {
+        gap: 1.25rem;
+        grid-column: span 1;
+        min-height: 8rem;
+    }
+}
+
+/* Large and above */
+@media (min-width: 1080px) {}
+
+/* XL and above */
+@media (min-width: 1280px) {}
