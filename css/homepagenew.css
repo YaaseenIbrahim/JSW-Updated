@@ -9,6 +9,11 @@
     text-transform: capitalize;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .homepage__landing-section {
     background-image:
         linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -149,8 +154,8 @@
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: space-between;
-    grid-template-areas: 
-    'heading heading'
+    grid-template-areas:
+        'heading heading'
         'eng dhi'
         'eng dhi'
         'eng dhi';
@@ -173,13 +178,16 @@
 /* sAME CODE AS NORMAL BUTTON, CAN UNIONIZE */
 
 
+.news__card-link {
+    grid-column: span 2;
+
+}
 
 .news__card {
-    gap: 1.25rem;
     border-radius: var(--border-radius);
-    grid-column: span 2;
     display: flex;
     min-height: 8rem;
+    gap: 1.25rem;
 
 }
 
@@ -209,6 +217,7 @@
     font-size: clamp(16px, 4vw, 1.2rem);
 
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -217,7 +226,6 @@
 
 .news__card-dhivehi {
     direction: rtl;
-
 }
 
 /*! Change if no border for the cards */
@@ -228,20 +236,22 @@
 
 /* Medium and Above */
 @media (min-width: 780px) {
-    .homepage__latest-news-section {
-            row-gap: 1rem;
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-areas:
-                'heading heading'
-                'eng dhi'
-                'eng dhi'
-                'eng dhi';   }
+   
+
     .news__card {
         gap: 1.25rem;
-        grid-column: span 1;
         min-height: 8rem;
     }
+
+    .news__card-link {
+        grid-column: span 1;
+    }
+
+    .news__card-link.news__card-dhivehi {
+        grid-area: dhi;
+        direction: rtl;
+    }
+
 }
 
 /* Large and above */
