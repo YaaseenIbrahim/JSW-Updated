@@ -151,14 +151,19 @@ a {
 .homepage__latest-news-section {
     padding: var(--section-gap-size);
     row-gap: 1rem;
+    column-gap: 1rem;
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: space-between;
     grid-template-areas:
         'heading heading'
-        'eng dhi'
-        'eng dhi'
-        'eng dhi';
+        'eng-vertical eng'
+        'eng-vertical eng'
+        'eng-vertical eng'
+        'gap gap'
+        'dhi dhi-vertical'
+        'dhi dhi-vertical'
+        'dhi dhi-vertical';
 }
 
 .news__heading-row-container {
@@ -224,19 +229,14 @@ a {
 
 }
 
-.news__card-dhivehi {
-    direction: rtl;
-}
+
 
 /*! Change if no border for the cards */
 
-.news__card-dhivehi .news__text-container {
-    text-align: right;
-}
 
 /* Medium and Above */
 @media (min-width: 780px) {
-   
+
 
     .news__card {
         gap: 1.25rem;
@@ -247,11 +247,26 @@ a {
         grid-column: span 1;
     }
 
-    .news__card-link.news__card-dhivehi {
-        grid-area: dhi;
+    .news__card-link-dhivehi {
         direction: rtl;
     }
 
+    .news__card-link-english-vertical {
+        grid-area: eng-vertical;
+    }
+    .news__card-link-dhivehi-vertical {
+        grid-area: dhi-vertical;
+    }
+    
+    /*! Should this just be the news card link vertical on the a tag and nesting? */
+    .news__card-vertical {
+        flex-direction: column;
+    }
+
+    .news__card-vertical .news__image {
+        width: 100%;
+        height: 60%;
+    }
 }
 
 /* Large and above */

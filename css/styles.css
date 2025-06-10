@@ -32,6 +32,9 @@ ul {
 }
 
 /* ============== REUSABLE CSS CLASSES ================ */
+.--dhivehi-rtl {
+    direction: rtl;
+}
 .flex-parent {
     display: flex;
     justify-content: space-around;
