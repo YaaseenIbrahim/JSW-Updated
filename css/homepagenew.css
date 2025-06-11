@@ -254,10 +254,11 @@ a {
     .news__card-link-english-vertical {
         grid-area: eng-vertical;
     }
+
     .news__card-link-dhivehi-vertical {
         grid-area: dhi-vertical;
     }
-    
+
     /*! Should this just be the news card link vertical on the a tag and nesting? */
     .news__card-vertical {
         flex-direction: column;
@@ -266,6 +267,24 @@ a {
     .news__card-vertical .news__image {
         width: 100%;
         height: 60%;
+    }
+
+    .line-divider {
+        grid-area: gap;
+        grid-column: span 2;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .line-divider:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: var(--border-radius);
+        height: 10px;
+        justify-self: center    ;
+        background-color: grey;
     }
 }
 
