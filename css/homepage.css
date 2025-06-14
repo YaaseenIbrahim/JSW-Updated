@@ -1,11 +1,23 @@
 /* CSS for homepage page only */
 
 :root {
-    --section-gap-size: 3rem 0;
+    --section-gap-size: 2rem 0;
     --gap-size: 3rem 0;
 }
+body{
+    ---button-color: var(--buttonred);
+}
+* {
+    text-transform: capitalize;
+}
 
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.color-wrapper-stripe{
+    background-color: var(--stripe);
+}
 .homepage__landing-section {
     background-image:
         linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -26,185 +38,273 @@
 }
 
 .homepage__promotion-section {
+    row-gap: 3rem;
     background-color: var(--stripe);
     padding: var(--section-gap-size);
-    gap: var(--gap-size);
 }
 
 .promotion__row {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 4rem;
-
-}
-
-.promotion__image {
-    width: 40rem;
-    height: 22rem;
-    object-fit: cover;
-    border-radius: var(--border-radius);
+    row-gap: 0.75rem;
 }
 
 .promotion__text-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    row-gap: 0.75rem;
     text-align: center;
-    text-transform: capitalize;
+    text-wrap: balance;
+    row-gap: 0.5rem;
 }
 
-.promotion__text--heading {
-    font-size: 45px;
-    font-family: outfit-bold;
-    /* text-wrap: balance; */
+.promotion__heading {
+
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-family: outfit-bold, sans-serif;
+    /* white-space: nowrap;
+    overflow: hidden; */
+
 }
 
-.promotion__text--description {
-    font-size: 1rem;
-    font-family: outfit-light;
+.promotion__description {
+    font-size: clamp(16px, 2vw, 18px);
+    font-family: outfit-light, sans-serif;
+}
+
+.promotion__image {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
 }
 
 .homepage__button {
-    margin-top: 0.75rem;
+    padding: 0.6rem 1.5rem;
     font-size: 1rem;
+    font-family: outfit-medium, sans-serif;
     color: white;
-    background-color: var(--buttonred);
-    font-family: outfit-medium;
-    padding: 0.5rem 1.5rem;
+    background-color: var(---button-color);
+    border-radius: 999px;
+    height:fit-content;
+    display: inline-block;
+    cursor: pointer;
     width: fit-content;
-    height: min-content;
-    border-radius: 20px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease-in-out;
+    text-align: center;
 }
 
-/*! NTS: PC only effect */
-.homepage__button:hover {
-    transform: translateY(-4px);
-    box-shadow: none;
+/* Medium and Above */
+@media (min-width: 780px) {
+    .promotion__row {
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .promotion__row:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .promotion__row:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+
+    .promotion__image {
+        width: clamp(30rem, 20vw, 35rem);
+        height: clamp(15rem, 30vw, 18rem);
+    }
+
+    .promotion__text-container {
+        row-gap: 0.75rem;
+    }
+
 }
 
-/* 1200px — Laptops */
-@media (max-width: 1200px) {}
+/* Large and above */
+@media (min-width: 1080px) {
+    .promotion__row {
+        gap: 4rem;
+    }
 
-/* 992px — Tablets */
-@media (max-width: 992px) {}
+    .promotion__image {
+        width: 38rem;
+        height: 20rem;
+    }
 
-/* 768px — Mobile (large) */
-@media (max-width: 768px) {}
+    .homepage__button {
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
 
-/* 480px — Mobile (small) */
-@media (max-width: 480px) {}
+    .homepage__button:hover {
+        transform: translateY(4px);
+        box-shadow: none;
+    }
+}
 
+/* XL and above */
+@media (min-width: 1280px) {
+    .promotion__image {
+        max-width: 40rem;
+        height: 22rem;
+    }
+}
 
-/* ========== NEWS SECTION =========== */
-.homepage__news-section {
-    --gap-size: 1.5rem;
+/* ==== LATEST NEWS SECTION ==== */
+.homepage__latest-section {
     padding: var(--section-gap-size);
-    gap: var(--gap-size);
+    row-gap: 1rem;
+    column-gap: 1rem;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
     grid-template-areas:
-        'header header'
-        'eng dhi'
-        'eng dhi'
-        'eng dhi';
-
+        'heading heading'
+        'eng-vertical eng'
+        'eng-vertical eng'
+        'eng-vertical eng'
+        'gap gap'
+        'dhi dhi-vertical'
+        'dhi dhi-vertical'
+        'dhi dhi-vertical';
 }
-
-.homepage__news-section .card__text.--date {
-    color: var(--red);
+#homepage-latest-news-section {
+    ---accent-color: var(--red);
 }
-
-.homepage__news-section .homepage__button {
-    padding: 0.5rem 2rem;
-    justify-self: right;
+#homepage-latest-writings-section{
+    ---button-color: var(--green);
+    ---accent-color: var(--green);
 }
-
-.homepage__heading {
-    font-size: 42px;
-}
-
-.homepage__card {
-    background-color: white;
-    border-radius: var(--border-radius);
-    width: 100%;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.20);
+.homepage__heading-row-container {
+    grid-area: heading;
+    margin-bottom: 1rem;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage__section-heading {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-family: outfit-bold, sans-serif;
+    height: fit-content;
+    width: fit-content;
+}
+
+/* sAME CODE AS NORMAL BUTTON, CAN UNIONIZE */
+
+
+.latest-card__link {
+    grid-column: span 2;
 
 }
 
-.homepage__card.--horizontal-card {
-    flex-direction: row;
-    gap: 1rem;
+.latest-card {
+    border-radius: var(--border-radius);
+    display: flex;
+    min-height: 7.5rem;
+    gap: 1.25rem;
+
 }
 
-.card__image {
+.latest-card__image {
+    border-radius: var(--border-radius);
+    width: 35%;
+    height: auto;
     object-fit: cover;
 }
 
-.homepage__card.--horizontal-card .card__image {
-    width: 30%;
-    height: 100%;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-.homepage__card.--horizontal-card.--dhivehicard .card__image {
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.card__textcontainer {
-    padding: 1rem 0;
-}
-
-.card__text {
-    font-family: outfit-semi-bold;
-}
-
-.card__text.--title {
-    font-size: 1.4rem;
-}
-
-.card__text.--date {
-    font-size: var(--normal-font-size);
-}
-
-.homepage__card.--vertical-card {
-    grid-area: eng;
+.latest-card__text-container {
+    /* gap: 1rem; */
+    display: flex;
     flex-direction: column;
-}
-
-.homepage__card.--vertical-card .card__image {
-    width: 100%;
-    height: 60%;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-.homepage__card.--vertical-card.--dhivehi-card {
-    grid-area: dhi;
-}
-
-.homepage__card.--vertical-card .card__textcontainer {
-    margin: 0 1rem;
-    /* display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem; */
+    justify-content: center;
 
 }
 
-.homepage__card.--vertical-card .card__text.--title {
-    font-size: 1.8rem;
+.latest-card__date {
+    color: var(---accent-color);
+    font-family: outfit-light, sans-serif, aammufk;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
-.homepage__card.--vertical-card .card__text.--date {
-    font-size: 1.2rem;
+.latest-card__title {
+    font-family: outfit-semi-bold, aammufk;
+    font-size: clamp(16px, 4vw, 1.2rem);
+
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
 }
 
-.homepage__card.--dhivehi-card .card__text {
-    direction: rtl;
-    font-family: aanmufk;
+
+
+/*! Change if no border for the cards */
+
+
+/* Medium and Above */
+@media (min-width: 780px) {
+
+
+    .latest-card{
+        gap: 1.25rem;
+        min-height: 8rem;
+    }
+
+    .latest-card__link {
+        grid-column: span 1;
+    }
+
+    .latest-card__link-dhivehi {
+        direction: rtl;
+    }
+
+    .latest-card__link-english-vertical {
+        grid-area: eng-vertical;
+    }
+
+    .latest-card__link-dhivehi-vertical {
+        grid-area: dhi-vertical;
+    }
+
+    /*! Should this just be the news card link vertical on the a tag and nesting? */
+    .latest-card-vertical {
+        flex-direction: column;
+    }
+
+    .latest-card-vertical .latest-card__image {
+        width: 100%;
+        height: 60%;
+    }
+
+    .line-divider-grid {
+        grid-area: gap;
+        grid-column: span 2;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .line-divider-grid:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: var(--border-radius);
+        height: 0.5rem;
+        justify-self: center    ;
+        background-color: grey;
+    }
 }
+
+/* Large and above */
+@media (min-width: 1080px) {}
+
+/* XL and above */
+@media (min-width: 1280px) {}
