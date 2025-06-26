@@ -4,9 +4,11 @@
     --section-gap-size: 2rem 0;
     --gap-size: 3rem 0;
 }
-body{
+
+body {
     ---button-color: var(--buttonred);
 }
+
 * {
     text-transform: capitalize;
 }
@@ -15,9 +17,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.color-wrapper-stripe{
+
+.section-color-stripe {
     background-color: var(--stripe);
 }
+
 .homepage__landing-section {
     background-image:
         linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -90,7 +94,7 @@ a {
     color: white;
     background-color: var(---button-color);
     border-radius: 999px;
-    height:fit-content;
+    height: fit-content;
     display: inline-block;
     cursor: pointer;
     width: fit-content;
@@ -152,9 +156,10 @@ a {
         max-width: 40rem;
         height: 22rem;
     }
+   
 }
 
-/* ==== LATEST NEWS SECTION ==== */
+/* =========== LATEST NEWS AND WRITINGS SECTION ============= */
 .homepage__latest-section {
     padding: var(--section-gap-size);
     row-gap: 1rem;
@@ -172,13 +177,16 @@ a {
         'dhi dhi-vertical'
         'dhi dhi-vertical';
 }
+
 #homepage-latest-news-section {
     ---accent-color: var(--red);
 }
-#homepage-latest-writings-section{
+
+#homepage-latest-writings-section {
     ---button-color: var(--green);
     ---accent-color: var(--green);
 }
+
 .homepage__heading-row-container {
     grid-area: heading;
     margin-bottom: 1rem;
@@ -194,12 +202,8 @@ a {
     width: fit-content;
 }
 
-/* sAME CODE AS NORMAL BUTTON, CAN UNIONIZE */
-
-
 .latest-card__link {
     grid-column: span 2;
-
 }
 
 .latest-card {
@@ -207,7 +211,6 @@ a {
     display: flex;
     min-height: 7.5rem;
     gap: 1.25rem;
-
 }
 
 .latest-card__image {
@@ -253,7 +256,7 @@ a {
 @media (min-width: 780px) {
 
 
-    .latest-card{
+    .latest-card {
         gap: 1.25rem;
         min-height: 8rem;
     }
@@ -262,8 +265,9 @@ a {
         grid-column: span 1;
     }
 
-    .latest-card__link-dhivehi {
-        direction: rtl;
+    /*! Should this just be the news card link vertical on the a tag and nesting? */
+    .latest-card-vertical {
+        flex-direction: column;
     }
 
     .latest-card__link-english-vertical {
@@ -272,11 +276,6 @@ a {
 
     .latest-card__link-dhivehi-vertical {
         grid-area: dhi-vertical;
-    }
-
-    /*! Should this just be the news card link vertical on the a tag and nesting? */
-    .latest-card-vertical {
-        flex-direction: column;
     }
 
     .latest-card-vertical .latest-card__image {
@@ -298,13 +297,16 @@ a {
         width: 100%;
         border-radius: var(--border-radius);
         height: 0.5rem;
-        justify-self: center    ;
-        background-color: grey;
+        justify-self: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        
     }
 }
 
-/* Large and above */
-@media (min-width: 1080px) {}
+/* ========= ALUMNI TESTIMONIALS SECTION ========= */
 
-/* XL and above */
-@media (min-width: 1280px) {}
+.homepage__alumni-testimonials-section {
+    padding: var(--section-gap-size);
+    
+}
+
