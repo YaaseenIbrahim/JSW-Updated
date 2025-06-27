@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 
 <body>
@@ -262,6 +264,54 @@
         </section>
 
         <section class="homepage__alumni-testimonials-section" id="homepage-alumni-testimonials-section">
+            <h2 class="homepage__section-heading">Alumni Testimonials</h2>
+            <div class="alumni__wrapper">
+                <i id="prev" class="alumni__arrow">&#10094;</i>
+                <div class="image-container">
+                    <div class="carousel">
+                        <img src="/_images/homepage-images/image-copy.png" alt="1">
+                        <img src="/_images/homepage-images/image.png" alt="2">
+                        <img src="/_images/homepage-images/JAL_9151.jpg" alt="3">
+                    </div>
+                </div>
+                <i id="next" class="alumni__arrow">&#10095;</i>
+            </div>
         </section>
+    </main>
+
+    <script>
+       const carousel = document.querySelector('.carousel');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;  // Tracks the current image index
+        const totalImages = images.length;
+
+        // Update the carousel position based on the index
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Moves the carousel by the width of the images
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Handle "next" button click
+        nextButton.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;  // Loop back to the first image
+            }
+            updateCarousel();
+        });
+
+        // Handle "prev" button click
+        prevButton.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = totalImages - 1;  // Loop back to the last image
+            }
+            updateCarousel();
+        });
+
+    </script>
+</body>
 
 </html>

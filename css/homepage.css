@@ -2,7 +2,7 @@
 
 :root {
     --section-gap-size: 2rem 0;
-    --gap-size: 3rem 0;
+    --gap-size: 1rem;
 }
 
 body {
@@ -156,14 +156,14 @@ a {
         max-width: 40rem;
         height: 22rem;
     }
-   
+
 }
 
 /* =========== LATEST NEWS AND WRITINGS SECTION ============= */
 .homepage__latest-section {
     padding: var(--section-gap-size);
-    row-gap: 1rem;
-    column-gap: 1rem;
+    row-gap: var(--gap-size);
+    column-gap: var(--gap-size);
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
@@ -189,7 +189,7 @@ a {
 
 .homepage__heading-row-container {
     grid-area: heading;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -299,7 +299,7 @@ a {
         height: 0.5rem;
         justify-self: center;
         background-color: rgba(0, 0, 0, 0.6);
-        
+
     }
 }
 
@@ -307,6 +307,73 @@ a {
 
 .homepage__alumni-testimonials-section {
     padding: var(--section-gap-size);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
 }
 
+.alumni__wrapper {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alumni__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 36px;
+    width: 36px;
+    background-color: #343f4f;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s linear;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.alumni__arrow:active {
+    transform: scale(0.94) translateY(-50%);
+}
+
+#prev {
+    left: 25px;
+}
+
+#next {
+    right: 25px;
+}
+
+.image-container {
+    height: 320px;
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    height: 100%;
+        width: 100%;
+}
+
+
+.carousel img {
+    height: 100%;
+    width: 100%;
+    border-radius: 18px;
+    border: 10px solid #fff;
+    object-fit: cover;
+}
