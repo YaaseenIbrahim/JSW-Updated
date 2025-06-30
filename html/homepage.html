@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/css/homepage.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <script src="/scripts/alumni-carousel.js" defer></script>
 </head>
 
 <body>
@@ -280,7 +282,7 @@
         <section class="homepage__alumni-testimonials-section" id="homepage-alumni-testimonials-section">
             <h2 class="homepage__section-heading">Alumni Testimonials</h2>
 
-            <div class="alumni__block">
+            <div class="alumni__carousel">
                 <div class="alumni__prev-arrow">
                     <svg width="59" height="66" viewBox="0 0 59 66" fill="none" xmlns="http://www.w3.org/2000/svg"
                         loading="lazy">
@@ -297,10 +299,11 @@
                     </svg>
                     <svg class="avatar__light-yellow-svg" width="165" height="180" viewBox="0 0 165 180" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.3228 0.289551L132.184 29.6264L164.744 150.843L82 170L10 160L0.973633 167L10.3228 0.289551Z"
+                        <path
+                            d="M10.3228 0.289551L132.184 29.6264L164.744 150.843L82 170L10 160L0.973633 167L10.3228 0.289551Z"
                             fill="#FFF9AE" />
                     </svg>
-                      
+
 
                     <img src="/_images/homepage-images/newperson.png" alt="Avatar of Alumni" class="avatar__image" />
                 </div>
@@ -323,55 +326,34 @@
                     </svg>
                 </div>
             </div>
+            <section class="alumni__cards-section">
 
-
-            <!-- <div class="alumni__wrapper">
-                <i id="prev" class="alumni__arrow">&#10094;</i>
-                <div class="image-container">
-                    <div class="carousel">
-                        <img src="/_images/homepage-images/image-copy.png" alt="1">
-                        <img src="/_images/homepage-images/image.png" alt="2">
-                        <img src="/_images/homepage-images/JAL_9151.jpg" alt="3">
+                <article class="alumni-card">
+                    <img class="alumni-card__image" src="/_images/homepage-images/muizzu.png" alt="News Image"
+                        loading="lazy" />
+                    <div class="latest-card__text-container">
+                        <h6 class="latest-card__date">Class Of 2024</h6>
+                        <h3 class="latest-card__title truncate-3-lines">Muhammed Muizz</h3>
                     </div>
-                </div>
-                <i id="next" class="alumni__arrow">&#10095;</i>
-            </div> -->
+                </article>
+                <article class="alumni-card">
+                    <img class="alumni-card__image" src="/_images/homepage-images/newperson.png" alt="News Image" loading="lazy" />
+                    <div class="latest-card__text-container">
+                        <h6 class="latest-card__date">Class of 2003</h6>
+                        <h3 class="latest-card__title truncate-3-lines">Abraham Lincoln</h3>
+                    </div>
+                </article>
+                <article class="alumni-card">
+                    <img class="alumni-card__image" src="/_images/homepage-images/newperson.png" alt="News Image" loading="lazy" />
+                    <div class="latest-card__text-container">
+                        <h6 class="latest-card__date">Class of 2003</h6>
+                        <h3 class="latest-card__title truncate-3-lines">Abraham Lincoln</h3>
+                    </div>
+                </article>
+            </section>
+            <a href="#" class="homepage__button">View More</a>
         </section>
     </main>
-
-    <script>
-        const carousel = document.querySelector('.carousel');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        const images = document.querySelectorAll('.carousel img');
-        let currentIndex = 0;  // Tracks the current image index
-        const totalImages = images.length;
-
-        // Update the carousel position based on the index
-        function updateCarousel() {
-            const offset = -currentIndex * 100; // Moves the carousel by the width of the images
-            carousel.style.transform = `translateX(${offset}%)`;
-        }
-
-        // Handle "next" button click
-        nextButton.addEventListener('click', () => {
-            currentIndex++;
-            if (currentIndex >= totalImages) {
-                currentIndex = 0;  // Loop back to the first image
-            }
-            updateCarousel();
-        });
-
-        // Handle "prev" button click
-        prevButton.addEventListener('click', () => {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1;  // Loop back to the last image
-            }
-            updateCarousel();
-        });
-
-    </script>
 </body>
 
 </html>

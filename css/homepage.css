@@ -260,11 +260,14 @@ a {
 
 
     .latest-card {
-        gap: 1.25rem;
         min-height: 8rem;
     }
 
     .latest-card__link {
+        grid-column: span 1;
+    }
+
+    .alumni-card {
         grid-column: span 1;
     }
 
@@ -318,7 +321,7 @@ a {
     row-gap: 2rem;
 }
 
-.alumni__block {
+.alumni__carousel {
     display: grid;
     row-gap: 2rem;
     width: 100%;
@@ -409,87 +412,34 @@ a {
 }
 
 .alumni__quote {
-    font-style: italic;
+    /* font-style: italic; */
+    font-family: outfit, aammufk, sans-serif;
 }
 
 .alumni__name {
     font-family: outfit-semi-bold, aammufk, sans-serif;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.alumni__wrapper {
-    display: flex;
+.alumni__cards-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 400px;
-    background: #fff;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
 }
 
-/* .alumni__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 36px;
-    width: 36px;
-    background-color: #343f4f;
+.alumni-card {
+    grid-column: span 2;
+    display: flex;
+    background-color: white;
+    border-radius: var(--border-radius);
+    gap: 1.25rem;
+}
+
+.alumni-card__image {
+    width: 6rem;
+    aspect-ratio: 1;
+    padding: 0.5rem;
     border-radius: 50%;
-    text-align: center;
-    line-height: 36px;
-    color: #fff;
-    font-size: 15px;
-    transition: all 0.3s linear;
-    z-index: 100;
-    cursor: pointer;
-}
- */
-.alumni__arrow:active {
-    transform: scale(0.94) translateY(-50%);
-}
-
-#prev {
-    left: 25px;
-}
-
-#next {
-    right: 25px;
-}
-
-.image-container {
-    height: 320px;
-    max-width: 500px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-    height: 100%;
-    width: 100%;
-}
-
-
-.carousel img {
-    height: 100%;
-    width: 100%;
-    border-radius: 18px;
-    border: 10px solid #fff;
     object-fit: cover;
+
 }
