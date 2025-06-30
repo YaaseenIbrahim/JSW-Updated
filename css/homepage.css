@@ -6,9 +6,13 @@
 }
 
 body {
-    ---button-color: var(--buttonred);
+    --button-color: var(--buttonred);
 }
-
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 * {
     text-transform: capitalize;
 }
@@ -92,7 +96,7 @@ a {
     font-size: 1rem;
     font-family: outfit-medium, sans-serif;
     color: white;
-    background-color: var(---button-color);
+    background-color: var(--button-color);
     border-radius: 999px;
     height: fit-content;
     display: inline-block;
@@ -179,17 +183,17 @@ a {
 }
 
 #homepage-latest-news-section {
-    ---accent-color: var(--red);
+    --accent-color: var(--red);
 }
 
 #homepage-latest-writings-section {
-    ---button-color: var(--green);
-    ---accent-color: var(--green);
+    --button-color: var(--green);
+    --accent-color: var(--green);
 }
 
 .homepage__heading-row-container {
     grid-area: heading;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -229,7 +233,7 @@ a {
 }
 
 .latest-card__date {
-    color: var(---accent-color);
+    color: var(--accent-color);
     font-family: outfit-light, sans-serif, aammufk;
     font-size: 0.9rem;
     font-weight: 600;
@@ -239,11 +243,7 @@ a {
     font-family: outfit-semi-bold, aammufk;
     font-size: clamp(16px, 4vw, 1.2rem);
 
-    display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    
 
 }
 
@@ -306,12 +306,95 @@ a {
 /* ========= ALUMNI TESTIMONIALS SECTION ========= */
 
 .homepage__alumni-testimonials-section {
+    --accent-color: var(--yellow);
+    --button-color: var(--yellow);
     padding: var(--section-gap-size);
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 2rem;
 }
+
+.alumni__block {
+    display: grid;
+    row-gap: 2rem;
+    width: 100%;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+        'arrow1 image arrow2'
+        'quote quote quote';
+    justify-items: center;
+    align-items: center;
+}
+
+.alumni__prev-arrow {
+    grid-area: arrow1;
+}
+
+.alumni__next-arrow {
+    grid-area: arrow2;
+}
+
+.alumni__image {
+    width: 10rem;
+    grid-area: image;
+}
+
+.alumni__text-container {
+    grid-area: quote;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light-yellow);
+    position: relative;
+}
+
+.alumni__text-container::before,
+.alumni__text-container::after {
+    --quote-size: 2rem;
+    content: '';
+    position: absolute;
+    width: var(--quote-size);
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.alumni__text-container::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M12 4C7 4 4 9 4 14s3 10 8 10c2 0 4-2 4-4s-2-4-4-4c-1 0-2 .5-3 1.3C9 12 10 6 12 4z' fill='black'/%3E%3C/svg%3E");
+    left: -1rem;
+    top: -0.5rem;
+}
+
+.alumni__text-container::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M20 28c5 0 8-5 8-10s-3-10-8-10c-2 0-4 2-4 4s2 4 4 4c1 0 2-.5 3-1.3C23 20 22 26 20 28z' fill='black'/%3E%3C/svg%3E");
+    right: -1rem;
+    bottom: -0.5rem;
+}
+
+.alumni__quote {
+    font-style: italic;
+}
+
+.alumni__name {
+    font-family: outfit-semi-bold, aammufk, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .alumni__wrapper {
     display: flex;
@@ -326,7 +409,7 @@ a {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.alumni__arrow {
+/* .alumni__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -342,7 +425,7 @@ a {
     z-index: 100;
     cursor: pointer;
 }
-
+ */
 .alumni__arrow:active {
     transform: scale(0.94) translateY(-50%);
 }
@@ -366,7 +449,7 @@ a {
     display: flex;
     transition: transform 0.4s ease-in-out;
     height: 100%;
-        width: 100%;
+    width: 100%;
 }
 
 
