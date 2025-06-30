@@ -8,11 +8,13 @@
 body {
     --button-color: var(--buttonred);
 }
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
 * {
     text-transform: capitalize;
 }
@@ -123,6 +125,7 @@ a {
     .promotion__image {
         width: clamp(30rem, 20vw, 35rem);
         height: clamp(15rem, 30vw, 18rem);
+
     }
 
     .promotion__text-container {
@@ -243,7 +246,7 @@ a {
     font-family: outfit-semi-bold, aammufk;
     font-size: clamp(16px, 4vw, 1.2rem);
 
-    
+
 
 }
 
@@ -335,9 +338,40 @@ a {
     grid-area: arrow2;
 }
 
-.alumni__image {
-    width: 10rem;
+
+.alumni__avatar-container {
     grid-area: image;
+    position: relative;
+    width: 10rem;
+    height: 12rem;
+    overflow: hidden;
+}
+
+.avatar__dark-yellow-svg,
+.avatar__light-yellow-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.avatar__dark-yellow-svg {
+    z-index: 1;
+    transform: translate(10px, 20px);
+}
+
+.avatar__light-yellow-svg {
+    z-index: 2;
+    transform: translate(40px, 60px);
+}
+
+.avatar__image {
+    object-fit: cover;
+    z-index: 3;
+    width: 10rem;
+    height: 12rem;
+    position: relative;
+    filter: grayscale(100%);
+    clip-path: polygon(30% 0%, 70% 5%, 100% 40%, 85% 100%, 25% 95%, 0% 45%);
 }
 
 .alumni__text-container {
@@ -346,7 +380,6 @@ a {
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
-    align-items: center;
     text-align: center;
     background-color: var(--light-yellow);
     position: relative;
@@ -364,13 +397,13 @@ a {
 }
 
 .alumni__text-container::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M12 4C7 4 4 9 4 14s3 10 8 10c2 0 4-2 4-4s-2-4-4-4c-1 0-2 .5-3 1.3C9 12 10 6 12 4z' fill='black'/%3E%3C/svg%3E");
+    background-image: url("/_images/homepage-images/quote-open.svg");
     left: -1rem;
     top: -0.5rem;
 }
 
 .alumni__text-container::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M20 28c5 0 8-5 8-10s-3-10-8-10c-2 0-4 2-4 4s2 4 4 4c1 0 2-.5 3-1.3C23 20 22 26 20 28z' fill='black'/%3E%3C/svg%3E");
+    background-image: url("/_images/homepage-images/quote-close.svg");
     right: -1rem;
     bottom: -0.5rem;
 }
