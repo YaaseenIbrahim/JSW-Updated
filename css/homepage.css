@@ -207,7 +207,9 @@ a {
     font-family: outfit-bold, sans-serif;
     height: fit-content;
     width: fit-content;
+    
 }
+
 
 .latest-card__link {
     grid-column: span 2;
