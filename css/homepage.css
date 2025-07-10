@@ -9,6 +9,16 @@ body {
     --button-color: var(--buttonred);
 }
 
+/* Only required during production? */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -108,7 +118,7 @@ a {
 }
 
 /* Medium and Above */
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     .promotion__row {
         justify-content: space-around;
         gap: 1rem;
@@ -207,7 +217,7 @@ a {
     font-family: outfit-bold, sans-serif;
     height: fit-content;
     width: fit-content;
-    
+
 }
 
 
@@ -258,7 +268,7 @@ a {
 
 
 /* Medium and Above */
-@media (min-width: 780px) {
+@media (min-width: 768px) {
 
 
     .latest-card {
@@ -415,11 +425,13 @@ a {
 
 .alumni__quote {
     /* font-style: italic; */
+    font-size: clamp(16px, 4vw, 18px);
     font-family: outfit, aammufk, sans-serif;
 }
 
 .alumni__name {
     font-family: outfit-semi-bold, aammufk, sans-serif;
+    font-size: clamp(16px, 4vw, 18px);
 }
 
 .alumni__cards-section {
@@ -432,16 +444,47 @@ a {
 .alumni-card {
     grid-column: span 2;
     display: flex;
+    align-items: center;
+    height: 8rem;
+    justify-content: center;
     background-color: white;
     border-radius: var(--border-radius);
-    gap: 1.25rem;
+    gap: 2rem;
 }
 
 .alumni-card__image {
     width: 6rem;
-    aspect-ratio: 1;
-    padding: 0.5rem;
+    height: 6rem;
     border-radius: 50%;
     object-fit: cover;
 
+}
+
+/* Small And Above  */
+@media (min-width: 500px) {
+    .alumni-card {
+        justify-content: left;
+    }
+
+    .alumni-card__image {
+        margin-left: 2rem;
+    }
+}
+
+/* Medium and Above */
+@media (min-width: 768px) {
+    .alumni-card {
+        grid-column: span 1;
+        height: 9rem;
+    }
+
+    .alumni__text-container {
+        margin: 0 10rem;
+        padding: 1rem;
+    }
+    
+    .alumni-card__image {
+        width: 7rem;
+            height: 7rem;
+    }
 }
