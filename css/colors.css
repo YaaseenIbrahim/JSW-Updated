@@ -11,3 +11,10 @@
     --darkstripe: #FFD9D9;
     --mutedtext: #5F5F5F;
 }
+
+.section-color-stripe {
+	background-color: var(--stripe);
+}
+.section-color-dark-stripe {
+    background-color: var(--darkstripe);
+}
