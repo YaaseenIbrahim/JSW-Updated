@@ -28,7 +28,7 @@
     src: url(/fonts/faruma.otf);
 }
 @font-face {
-    font-family: aanmufk;
+    font-family: aammufk;
     src: url(/fonts/aammufk.ttf);
 }
 @font-face {
@@ -44,6 +44,10 @@
     src: url(/fonts/mvwaheed.otf);
 }
 @font-face {
-    font-family: mvmaground bold;
+    font-family: mvmaground-bold;
     src: url(/fonts/Mv_MAG_Round_Bold.otf);
+}
+
+.outfit-light{
+    font-family: outfit-light, mvtypewriter, sans-serif;
 }
