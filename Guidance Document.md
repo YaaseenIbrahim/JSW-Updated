@@ -48,3 +48,20 @@ Especially considering certain words have different connotations to different us
     Default text size: 1rem (16px)
     Secondary/Caption level text size:
     To be determined
+
+# 4. Responsiveness
+    4.1. All CSS should be created with the mobile-first approach, leaving complex PC CSS into the media queries
+
+    4.2. Wherever possible, try to minimize use of media queries, by choosing responsive units and sizes
+        Eg: Use of clamp() for font-sizes or image-widths so it is already responsive without using breakpoints
+    
+    4.3. Where media queries are required, use 'min-width' for the viewports, to promote a mobile-first approach
+
+    4.4. Where media queries are required, stick to the following breakpoints:
+
+        500px: Small and above
+        768px: Medium and above
+        1080px: Large and above
+        1280px: XL and above
+    
+    4.5. If an instance arises where a specific design element or what have you requires a specific breakpoint outside of the above list, first try to conform to the standard breakpoints by tweaking the design. If the resulting design is not good, or the conformation process results in breakage of other UI such that it is deemed difficult to continue; a specific breakpoint for this case can be used, provided that a comment is in the CSS to explain what it is for

@@ -345,7 +345,7 @@ h6 {
 	font-size: clamp(1rem, 4vw, 1.125rem);
 	text-indent: 1rem;
 }
-/* MERGRED MEDIA QUERIES */
+/* MERRGED MEDIA QUERIES */
 /* Small And Above  */
 @media (min-width: 500px) {
 	.alumni-card {
