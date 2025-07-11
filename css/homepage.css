@@ -70,16 +70,11 @@ h6 {
 .promotion__text-container {
 	display: flex;
 	flex-direction: column;
-	flex-direction: row;
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 	text-wrap: balance;
 	row-gap: 0.5rem;
-}
-
-.promotion__description {
-	font-family: outfit-light, sans-serif;
-	font-size: clamp(16px, 2vw, 18px);
 }
 
 .promotion__image {
@@ -103,61 +98,7 @@ h6 {
 	height: fit-content;
 }
 
-/* Medium and Above */
-@media (min-width: 768px) {
-	.promotion__row {
-		
-		justify-content: space-around;
-		gap: 1rem;
-	}
 
-	.promotion__row:nth-child(even) {
-		flex-direction: row;
-	}
-
-	.promotion__row:nth-child(odd) {
-		flex-direction: row-reverse;
-	}
-
-	.promotion__image {
-		width: clamp(30rem, 20vw, 35rem);
-		height: clamp(15rem, 30vw, 18rem);
-	}
-
-	.promotion__text-container {
-		row-gap: 0.75rem;
-	}
-}
-
-/* Large and Above */
-@media (min-width: 1080px) {
-	.promotion__row {
-		gap: 4rem;
-	}
-
-	.promotion__image {
-		width: 38rem;
-		height: 20rem;
-	}
-
-	.homepage__button {
-		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-		transition: all 0.3s ease-in-out;
-	}
-
-	.homepage__button:hover {
-		transform: translateY(4px);
-		box-shadow: none;
-	}
-}
-
-/* XL And Above */
-@media (min-width: 1280px) {
-	.promotion__image {
-		max-width: 40rem;
-		height: 22rem;
-	}
-}
 
 /* ===== LATEST NEWS & WRITINGS ===== */
 .homepage__latest-section {
@@ -226,61 +167,13 @@ h6 {
 
 .latest-card__date {
 	color: var(--accent-color);
-	font-family: outfit-light, sans-serif;
 	font-size: 0.9rem;
 	font-weight: 600;
 }
 
 .latest-card__title {
 	font-family: outfit-semi-bold, aammufk;
-	font-size: clamp(16px, 4vw, 1.2rem);
-}
-
-@media (min-width: 768px) {
-	.latest-card {
-		min-height: 8rem;
-	}
-
-	.latest-card__link {
-		grid-column: span 1;
-	}
-
-	.alumni-card {
-		grid-column: span 1;
-	}
-
-	/*! Should this just be the news card link vertical on the a tag and nesting? */
-	.latest-card-vertical {
-		flex-direction: column;
-	}
-
-	.latest-card__link-english-vertical {
-		grid-area: eng-vertical;
-	}
-
-	.latest-card__link-dhivehi-vertical {
-		grid-area: dhi-vertical;
-	}
-
-	.latest-card-vertical .latest-card__image {
-		width: 100%;
-		height: 60%;
-	}
-
-	.line-divider-grid {
-		grid-area: gap;
-		grid-column: span 2;
-		padding: 2rem 0;
-	}
-
-	.line-divider-grid:after {
-		content: "";
-		display: block;
-		height: 0.5rem;
-		width: 100%;
-		border-radius: var(--border-radius);
-		background-color: rgba(0, 0, 0, 0.6);
-	}
+	font-size: clamp(1rem, 4vw, 1.2rem);
 }
 
 /* ===== ALUMNI TESTIMONIALS ===== */
@@ -361,10 +254,9 @@ h6 {
 
 .alumni__text-container::before,
 .alumni__text-container::after {
-	--quote-size: 2rem;
 	content: "";
 	position: absolute;
-	width: var(--quote-size);
+	width: 2rem;
 	aspect-ratio: 1;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -383,14 +275,11 @@ h6 {
 }
 
 .alumni__quote {
-	/* font-style: italic; */
-	font-size: clamp(16px, 4vw, 18px);
 	font-family: outfit, aammufk, sans-serif;
 }
 
 .alumni__name {
 	font-family: outfit-semi-bold, aammufk, sans-serif;
-	font-size: clamp(16px, 4vw, 18px);
 }
 
 .alumni__cards-section {
@@ -418,33 +307,6 @@ h6 {
 	border-radius: 50%;
 }
 
-/* Small And Above  */
-@media (min-width: 500px) {
-	.alumni-card {
-		justify-content: flex-start;
-	}
-
-	.alumni-card__image {
-		margin-left: 2rem;
-	}
-}
-
-/* Medium and Above */
-@media (min-width: 768px) {
-	.alumni-card {
-		grid-column: span 1;
-		height: 9rem;
-	}
-
-	.alumni__text-container {
-		margin: 0 10rem;
-	}
-
-	.alumni-card__image {
-		width: 7rem;
-		height: 7rem;
-	}
-}
 
 /* ===== PRINCIPAL’S MESSAGE ===== */
 .homepage__principals-message-section {
@@ -483,9 +345,100 @@ h6 {
 	font-size: clamp(1rem, 4vw, 1.125rem);
 	text-indent: 1rem;
 }
+/* MERGRED MEDIA QUERIES */
+/* Small And Above  */
+@media (min-width: 500px) {
+	.alumni-card {
+		justify-content: flex-start;
+	}
 
+	.alumni-card__image {
+		margin-left: 2rem;
+	}
+}
 /* Medium and Above */
 @media (min-width: 768px) {
+	.promotion__row {
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 1rem;
+	}
+
+	.promotion__row:nth-child(even) {
+		flex-direction: row;
+	}
+
+	.promotion__row:nth-child(odd) {
+		flex-direction: row-reverse;
+	}
+
+	.promotion__image {
+		width: clamp(30rem, 20vw, 35rem);
+		height: clamp(15rem, 30vw, 18rem);
+	}
+
+	.promotion__text-container {
+		row-gap: 0.75rem;
+	}
+
+	.latest-card {
+		min-height: 8rem;
+	}
+
+	.latest-card__link {
+		grid-column: span 1;
+	}
+
+	.alumni-card {
+		grid-column: span 1;
+	}
+
+	/*! Should this just be the news card link vertical on the a tag and nesting? */
+	.latest-card-vertical {
+		flex-direction: column;
+	}
+
+	.latest-card__link-english-vertical {
+		grid-area: eng-vertical;
+	}
+
+	.latest-card__link-dhivehi-vertical {
+		grid-area: dhi-vertical;
+	}
+
+	.latest-card-vertical .latest-card__image {
+		width: 100%;
+		height: 60%;
+	}
+
+	.line-divider-grid {
+		grid-area: gap;
+		grid-column: span 2;
+		padding: 2rem 0;
+	}
+
+	.line-divider-grid:after {
+		content: "";
+		display: block;
+		height: 0.5rem;
+		width: 100%;
+		border-radius: var(--border-radius);
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.alumni-card {
+		grid-column: span 1;
+		height: 9rem;
+	}
+
+	.alumni__text-container {
+		margin: 0 10rem;
+	}
+
+	.alumni-card__image {
+		width: 7rem;
+		height: 7rem;
+	}
 	.principal__box {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
@@ -518,5 +471,33 @@ h6 {
 	.principal__message {
 		grid-area: message;
 		text-align: justify;
+	}
+}
+/* Large and Above */
+@media (min-width: 1080px) {
+	.promotion__row {
+		gap: 4rem;
+	}
+
+	.promotion__image {
+		width: 38rem;
+		height: 20rem;
+	}
+
+	.homepage__button {
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+		transition: all 0.3s ease-in-out;
+	}
+
+	.homepage__button:hover {
+		transform: translateY(4px);
+		box-shadow: none;
+	}
+}
+/* XL And Above */
+@media (min-width: 1280px) {
+	.promotion__image {
+		max-width: 40rem;
+		height: 22rem;
 	}
 }

@@ -40,7 +40,9 @@ ul {
     justify-content: space-around;
     align-items: center;
 }
-
+.default-font-size{
+    font-size: clamp(1rem, 4vw, 1.125rem);
+}
 .flex-parent-col {
     display: flex;
     justify-content: space-around;
