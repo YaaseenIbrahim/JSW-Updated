@@ -150,10 +150,9 @@ img.full-width {
 .page__heading:before{
     content: "";
     position: absolute;
-    display: block;
-    height: 65px;
-    width: 78px;
-    background-image: url("/_images/icons/Shield.svg");
+	height: 122pt;
+	width: 109pt;
+    background-image: url("/_images/icons/black-shield.svg");
 }
 .page__description {
 	font-size: var(--normal-font-size);
