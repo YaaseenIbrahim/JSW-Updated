@@ -342,7 +342,7 @@ h6 {
 }
 
 .principal__message {
-	font-size: clamp(1rem, 4vw, 1.125rem);
+	
 	text-indent: 1rem;
 }
 /* MERRGED MEDIA QUERIES */
