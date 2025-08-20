@@ -10,7 +10,6 @@
 	--smaller-font-size: 0.75rem;
 	--border-radius: 10px;
 }
-
 * {
 	margin: 0;
 	padding: 0;
@@ -101,17 +100,16 @@ ul {
 
 	display: grid;
 	grid-template-columns:
-		[full-width-start] minmax(
-			var(--padding-inline),
-			1fr
-		) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(
+		[full-width-start] minmax(var(--padding-inline), 1fr)
+		[breakout-start] minmax(0, var(--breakout-size)) [content-start] min(
 			100% - (var(--padding-inline) * 2),
 			var(--content-max-width)
 		)
 		[content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(
 			var(--padding-inline),
 			1fr
-		) [full-width-end];
+		)
+		[full-width-end];
 }
 
 /*=============== GLOBAL VARIABLES ===============*/
@@ -130,36 +128,73 @@ ul {
 	display: grid;
 	grid-template-columns: inherit;
 }
-
+.full-width > .full-width-child {
+	grid-column: full-width;
+	width: 100%;
+}
+.full-width.no-inner-grid {
+	grid-column: full-width;
+	display: block; /* Or flex, depending on layout */
+}
+/* 
 img.full-width {
 	width: 100%;
 	max-height: 45vh;
 	object-fit: cover;
-}
+} */
 /* ============ PAGE HEADING ============ */
 .page__section {
 }
-
+/* .page__heading-container {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	margin: auto;
+	gap: 0.35rem;
+} */
 .page__heading {
-	font-family: outfit-bold, sans-serif;
-	font-size: clamp(1.75rem, 6vw, 3rem);
-	text-align: center;
-	border: 1px solid black;
-    position:relative;
+    font-family: outfit-bold, sans-serif;
+    font-size: clamp(1.75rem, 6vw, 3rem); 
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+    white-space: nowrap;
+    width: fit-content;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    justify-content: center;
+    border: 1px solid black;
 }
-.page__heading:before{
+
+.page__heading:after,
+.page__heading:before {
+    --shield-size: 20px;
     content: "";
     position: absolute;
-	height: 122pt;
-	width: 109pt;
+    background-size: var(--shield-size) var(--shield-size);
+    width: var(--shield-size);
+    height: var(--shield-size);
     background-image: url("/_images/icons/black-shield.svg");
+    bottom: -5px; /* Adjust this to position the shields with their tip touching the bottom of the text */
 }
-.page__description {
-	font-size: var(--normal-font-size);
-	color: var(--textcolor);
-	text-align: center;
-	margin-bottom: 2rem;
+
+.page__heading:before {
+    left: -25px; /* Adjust this to move the left shield */
 }
+
+.page__heading:after {
+    right: -25px; /* Adjust this to move the right shield */
+}
+
+.breakline {
+	margin: 1.5rem 0;
+	height: 2px;
+	border-radius: 10px;
+	background-color: var(--darkgray);
+}
+
+
 /*=============== NAVBAR ===============*/
 .navbar {
 	height: var(--header-height);
